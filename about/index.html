@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powder.ly - Caleb Forestal Profile</title>
+    <title>Powder.ly - About Us</title>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
     :root {
@@ -74,71 +74,86 @@
         color: var(--secondary-color);
     }
 
-    .profile-section {
+    .about-section {
         padding: 6rem 5%;
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
     }
 
-    .profile-header {
+    .about-header {
         margin-bottom: 2rem;
     }
 
-    .profile-header h2 {
+    .about-header h2 {
         font-family: 'Amatic SC', cursive;
         font-size: 3rem;
+        margin-bottom: 1rem;
     }
 
-    .profile-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
+    .about-header p {
+        font-size: 1.2rem;
     }
 
-    .profile-item {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 600px;
+    .about-content {
+        margin-top: 2rem;
+        text-align: left;
     }
 
-    .avatar {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        margin: 0 auto 1rem;
-    }
-
-    .profile-item h3 {
+    .about-content h3 {
         font-family: 'Amatic SC', cursive;
         font-size: 2rem;
         margin-bottom: 1rem;
     }
 
-    .profile-item p {
+    .about-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .team-section {
+        margin-top: 4rem;
+    }
+
+    .team-header {
+        margin-bottom: 2rem;
+    }
+
+    .team-header h3 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 2.5rem;
+    }
+
+    .team-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .team-member {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 200px;
+    }
+
+    .team-member img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
         margin-bottom: 1rem;
     }
 
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .social-links a {
-        color: var(--primary-color);
+    .team-member h4 {
+        font-family: 'Amatic SC', cursive;
         font-size: 1.5rem;
-        text-decoration: none;
-        transition: color 0.3s;
+        margin-bottom: 0.5rem;
     }
 
-    .social-links a:hover {
-        color: var(--accent-color);
+    .team-member p {
+        font-size: 1rem;
     }
 
     footer {
@@ -150,8 +165,13 @@
     }
 
     @media (max-width: 768px) {
-        .profile-header h2 {
+        .about-header h2 {
             font-size: 2.5rem;
+        }
+
+        .team-content {
+            flex-direction: column;
+            align-items: center;
         }
     }
     </style>
@@ -170,30 +190,28 @@
     </header>
 
     <main>
-        <section class="profile-section">
-            <div class="profile-header">
-                <h2>Caleb Forestal</h2>
-                <p>Founder & CEO @ Powder.ly</p>
+        <section class="about-section">
+            <div class="about-header">
+                <h2>About Us</h2>
+                <p>Learn more about Powder.ly and our mission to connect passionate skiers and snowboarders with local instructors.</p>
             </div>
-            <div class="profile-content">
-                <div class="profile-item">
-                    <img src="https://avatars.githubusercontent.com/u/133164966?v=4" alt="Caleb Forestal" class="avatar">
-                    <h3>About Caleb</h3>
-                    <p>Caleb Forestal is a passionate skier who calls Alyeska Resort their home resort. They've spent time traveling along I-70, skiing during the winter and exploring various mountains along the way.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/caleb-forestal" target="_blank">LinkedIn</a>
-                        <a href="https://www.instagram.com/caleb-forestal" target="_blank">Instagram</a>
-                        <a href="https://twitter.com/caleb-forestal" target="_blank">Twitter</a>
-                        <a href="mailto:caleb@powder.ly">Email</a>
+            <div class="about-content">
+                <h3>Our Mission</h3>
+                <p>At Powder.ly, our mission is to provide skiers and snowboarders with the best possible mountain experience by connecting them with knowledgeable local instructors. We believe that the best way to explore a mountain is with someone who knows it inside and out.</p>
+                <h3>Our Story</h3>
+                <p>Powder.ly was founded by Caleb Forestal, a passionate skier who wanted to create a platform where skiers and snowboarders could easily find and connect with local instructors. With a deep love for the mountains and a vision to make the skiing experience more enjoyable and accessible, Caleb and his team have worked tirelessly to build a community of dedicated instructors and enthusiastic skiers.</p>
+            </div>
+            <div class="team-section">
+                <div class="team-header">
+                    <h3>Meet the Team</h3>
+                </div>
+                <div class="team-content">
+                    <div class="team-member">
+                        <img src="https://avatars.githubusercontent.com/u/133164966?v=4" alt="Caleb Forestal">
+                        <h4>Caleb Forestal</h4>
+                        <p>Founder & CEO</p>
                     </div>
-                </div>
-                <div class="profile-item">
-                    <h3>Home Resort</h3>
-                    <p>Alyeska Resort</p>
-                </div>
-                <div class="profile-item">
-                    <h3>Favorite Ski Destinations</h3>
-                    <p>Various mountains along I-70</p>
+                    <!-- Add more team members as needed -->
                 </div>
             </div>
         </section>
