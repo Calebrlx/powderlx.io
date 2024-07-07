@@ -1,4 +1,277 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder.ly - Find a Local</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
+    :root {
+        --primary-color: #1a2980;
+        --secondary-color: #26d0ce;
+        --accent-color: #ff4b1f;
+        --background-color: #f8f9fa;
+        --text-color: #333;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    header {
+        background-color: transparent;
+        padding: 1rem 5%;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+        background-color: rgba(26, 41, 128, 0.9);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: 'Amatic SC', cursive;
+        font-size: 2.5rem;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .hero {
+        height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://powder.ly/images/find-instructor-hero.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        text-align: center;
+        color: white;
+        max-width: 800px;
+        padding: 2rem;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease-out;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease-out 0.5s both;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .find-section {
+        padding: 4rem 5%;
+        text-align: center;
+    }
+
+    .find-section h2 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .find-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .find-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .submit-btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+        background-color: #ff6347;
+        transform: scale(1.05);
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 3rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Powder.ly</a>
+            <div class="nav-links">
+                <a href="/features">The Goods</a>
+                <a href="/find-instructor">Find a Local</a>
+                <a href="/become-instructor">Join the Crew</a>
+                <a href="/login">My Stash</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find a Local</h1>
+                <p>Connect with the best local shredders and get the most out of your mountain experience!</p>
+            </div>
+        </section>
+
+        <section class="find-section">
+            <h2>Find Your Perfect Guide</h2>
+            <p>Use the form below to find a local instructor who matches your style and skill level.</p>
+            <div class="find-form">
+                <form>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skill-level">Skill Level</label>
+                        <select id="skill-level" name="skill-level" required>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferences">Preferences</label>
+                        <input type="text" id="preferences" name="preferences" placeholder="e.g., backcountry, park, groomers">
+                    </div>
+                    <button type="submit" class="submit-btn">Find Instructor</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Powder.ly. All rights reserved. See you in the white room!</p>
+    </footer>
+
+    <script>
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -39,4 +312,4 @@
         <h1>Login</h1>
         <p>[ Coming Soon ]<p>
     </body>
-</html>
+</html> -->
