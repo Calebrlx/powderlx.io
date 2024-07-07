@@ -1,217 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powder.ly - Join the Crew</title>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHDXJFC9FG"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-    
-            gtag('config', 'G-ZHDXJFC9FG');
-        </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHDXJFC9FG"></script>
+
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
-    :root {
-        --primary-color: #1a2980;
-        --secondary-color: #26d0ce;
-        --accent-color: #ff4b1f;
-        --background-color: #f8f9fa;
-        --text-color: #333;
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    header {
-        background-color: transparent;
-        padding: 1rem 5%;
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-        transition: background-color 0.3s ease;
-    }
-
-    header.scrolled {
-        background-color: rgba(26, 41, 128, 0.9);
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2.5rem;
-        color: white;
-        text-decoration: none;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
-        transition: all 0.3s;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .nav-links a:hover {
-        color: var(--secondary-color);
-    }
-
-    .hero {
-        height: 60vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://powder.ly/images/instructor-hero.jpg') no-repeat center center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-content {
-        text-align: center;
-        color: white;
-        max-width: 800px;
-        padding: 2rem;
-        z-index: 2;
-    }
-
-    .hero h1 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease-out;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        animation: fadeInUp 1s ease-out 0.5s both;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        :root {
+            --primary-color: #1a2980;
+            --secondary-color: #26d0ce;
+            --accent-color: #ff4b1f;
+            --background-color: #f8f9fa;
+            --text-color: #333;
         }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    .join-section {
-        padding: 4rem 5%;
-        text-align: center;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .join-section h2 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
+        header {
+            background-color: transparent;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-    .join-section p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
+        header.scrolled {
+            background-color: rgba(26, 41, 128, 0.9);
+        }
 
-    .join-form {
-        max-width: 600px;
-        margin: 0 auto;
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
+        .logo {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-    }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .form-group textarea {
-        resize: vertical;
-    }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
 
-    .submit-btn {
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        background-color: var(--accent-color);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://powder.ly/images/instructor-hero.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .submit-btn:hover {
-        background-color: #ff6347;
-        transform: scale(1.05);
-    }
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
 
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3rem;
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-    }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .join-section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .join-section h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .join-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -235,7 +233,8 @@
 
         <section class="join-section">
             <h2>Why Join Us?</h2>
-            <p>Share your knowledge, meet awesome people, and earn while doing what you love. Join our crew of local shredders today!</p>
+            <p>Share your knowledge, meet awesome people, and earn while doing what you love. Join our crew of local
+                shredders today!</p>
             <div class="join-form">
                 <h3>Sign Up</h3>
                 <form>
@@ -266,15 +265,23 @@
     </footer>
 
     <script>
-    // Header background change on scroll
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Google tag (gtag.js)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZHDXJFC9FG');
     </script>
 </body>
+
 </html>
