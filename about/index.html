@@ -1,181 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powder.ly - About Us</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHDXJFC9FG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZHDXJFC9FG');
+    </script>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
-    :root {
-        --primary-color: #1a2980;
-        --secondary-color: #26d0ce;
-        --accent-color: #ff4b1f;
-        --background-color: #f8f9fa;
-        --text-color: #333;
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        :root {
+            --primary-color: #1a2980;
+            --secondary-color: #26d0ce;
+            --accent-color: #ff4b1f;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+        }
 
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-        background-color: transparent;
-        padding: 1rem 5%;
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-        transition: background-color 0.3s ease;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    header.scrolled {
-        background-color: rgba(26, 41, 128, 0.9);
-    }
+        header {
+            background-color: transparent;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        header.scrolled {
+            background-color: rgba(26, 41, 128, 0.9);
+        }
 
-    .logo {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2.5rem;
-        color: white;
-        text-decoration: none;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 1.5rem;
-    }
+        .logo {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
-        transition: all 0.3s;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-    .nav-links a:hover {
-        color: var(--secondary-color);
-    }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .about-section {
-        padding: 6rem 5%;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
 
-    .about-header {
-        margin-bottom: 2rem;
-    }
+        .about-section {
+            padding: 6rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    .about-header h2 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
+        .about-header {
+            margin-bottom: 2rem;
+        }
 
-    .about-header p {
-        font-size: 1.2rem;
-    }
-
-    .about-content {
-        margin-top: 2rem;
-        text-align: left;
-    }
-
-    .about-content h3 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .about-content p {
-        margin-bottom: 1.5rem;
-    }
-
-    .team-section {
-        margin-top: 4rem;
-    }
-
-    .team-header {
-        margin-bottom: 2rem;
-    }
-
-    .team-header h3 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2.5rem;
-    }
-
-    .team-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    .team-member {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 200px;
-    }
-
-    .team-member img {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        margin-bottom: 1rem;
-    }
-
-    .team-member h4 {
-        font-family: 'Amatic SC', cursive;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .team-member p {
-        font-size: 1rem;
-    }
-
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
         .about-header h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+        }
+
+        .about-content {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .about-content h3 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .team-section {
+            margin-top: 4rem;
+        }
+
+        .team-header {
+            margin-bottom: 2rem;
+        }
+
+        .team-header h3 {
+            font-family: 'Amatic SC', cursive;
             font-size: 2.5rem;
         }
 
         .team-content {
-            flex-direction: column;
-            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
         }
-    }
+
+        .team-member {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-member img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h4 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .team-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -193,13 +205,20 @@
         <section class="about-section">
             <div class="about-header">
                 <h2>About Us</h2>
-                <p>Learn more about Powder.ly and our mission to connect passionate skiers and snowboarders with local instructors.</p>
+                <p>Learn more about Powder.ly and our mission to connect passionate skiers and snowboarders with local
+                    instructors.</p>
             </div>
             <div class="about-content">
                 <h3>Our Mission</h3>
-                <p>At Powder.ly, our mission is to provide skiers and snowboarders with the best possible mountain experience by connecting them with knowledgeable local instructors. We believe that the best way to explore a mountain is with someone who knows it inside and out.</p>
+                <p>At Powder.ly, our mission is to provide skiers and snowboarders with the best possible mountain
+                    experience by connecting them with knowledgeable local instructors. We believe that the best way to
+                    explore a mountain is with someone who knows it inside and out.</p>
                 <h3>Our Story</h3>
-                <p>Powder.ly was founded by Caleb Forestal, a passionate skier who wanted to create a platform where skiers and snowboarders could easily find and connect with local instructors. With a deep love for the mountains and a vision to make the skiing experience more enjoyable and accessible, Caleb and his team have worked tirelessly to build a community of dedicated instructors and enthusiastic skiers.</p>
+                <p>Powder.ly was founded by Caleb Forestal, a passionate skier who wanted to create a platform where
+                    skiers and snowboarders could easily find and connect with local instructors. With a deep love for
+                    the mountains and a vision to make the skiing experience more enjoyable and accessible, Caleb and
+                    his team have worked tirelessly to build a community of dedicated instructors and enthusiastic
+                    skiers.</p>
             </div>
             <div class="team-section">
                 <div class="team-header">
@@ -222,15 +241,16 @@
     </footer>
 
     <script>
-    // Header background change on scroll
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
+
 </html>
