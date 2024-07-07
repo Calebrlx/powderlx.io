@@ -483,6 +483,15 @@
         gtag('js', new Date());
 
         gtag('config', 'G-ZHDXJFC9FG');
+
+            // Menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNavLinks = document.getElementById('mobileNavLinks');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        mobileNavLinks.classList.toggle('show');
+    });
     </script>
 </body>
 
