@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder.ly - Caleb Forestal Profile</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
+    :root {
+        --primary-color: #1a2980;
+        --secondary-color: #26d0ce;
+        --accent-color: #ff4b1f;
+        --background-color: #f8f9fa;
+        --text-color: #333;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    header {
+        background-color: transparent;
+        padding: 1rem 5%;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+        background-color: rgba(26, 41, 128, 0.9);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: 'Amatic SC', cursive;
+        font-size: 2.5rem;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .profile-section {
+        padding: 6rem 5%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .profile-header {
+        margin-bottom: 2rem;
+    }
+
+    .profile-header h2 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 3rem;
+    }
+
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .profile-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .avatar {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+    }
+
+    .profile-item h3 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .profile-item p {
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: var(--accent-color);
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .profile-header h2 {
+            font-size: 2.5rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Powder.ly</a>
+            <div class="nav-links">
+                <a href="/features">The Goods</a>
+                <a href="/find-instructor">Find a Local</a>
+                <a href="/become-instructor">Join the Crew</a>
+                <a href="/login">My Stash</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="profile-header">
+                <h2>Caleb Forestal</h2>
+                <p>Founder & CEO @ Powder.ly</p>
+            </div>
+            <div class="profile-content">
+                <div class="profile-item">
+                    <img src="https://avatars.githubusercontent.com/u/133164966?v=4" alt="Caleb Forestal" class="avatar">
+                    <h3>About Caleb</h3>
+                    <p>Caleb Forestal is a passionate skier who calls Alyeska Resort their home resort. They've spent time traveling along I-70, skiing during the winter and exploring various mountains along the way.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/caleb-forestal" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/caleb-forestal" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/caleb-forestal" target="_blank">Twitter</a>
+                        <a href="mailto:caleb@powder.ly">Email</a>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <h3>Home Resort</h3>
+                    <p>Alyeska Resort</p>
+                </div>
+                <div class="profile-item">
+                    <h3>Favorite Ski Destinations</h3>
+                    <p>Telluride</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Powder.ly. All rights reserved. See you in the white room!</p>
+    </footer>
+
+    <script>
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    </script>
+</body>
+</html>
