@@ -1,0 +1,301 @@
+<html>
+
+<head>
+    <title>Powder.ly - Connect. Learn. Ski.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)), url('https://powder.ly/images/hero-background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .feature {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex-basis: 30%;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            line-height: 30px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .features,
+            .steps {
+                flex-direction: column;
+            }
+
+            .feature,
+            .step {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="https://powder.ly?description=Connect. Learn. Ski.#" class="logo">Powder.ly</a>
+            <div class="nav-links">
+                <a href="https://powder.ly?description=Connect. Learn. Ski.#features">Features</a>
+                <a href="https://powder.ly?description=Connect. Learn. Ski.#how-it-works">How It Works</a>
+                <a href="https://powder.ly?description=Connect. Learn. Ski.#login">Login</a>
+                <a href="https://powder.ly?description=Connect. Learn. Ski.#signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Connect. Learn. Ski.</h1>
+                <p>Join the community that's revolutionizing how skiers connect, share knowledge, and hit the slopes
+                    together.</p>
+                <a href="https://powder.ly?description=Connect. Learn. Ski.#signup" class="cta-button">Join
+                    Powder.ly</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <h2>Connect</h2>
+                <p>Find ski buddies, join local groups, and expand your skiing network.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h2>Learn</h2>
+                <p>Access a wealth of skiing knowledge, tips, and tutorials from experts and peers.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⛷️</div>
+                <h2>Ski</h2>
+                <p>Organize trips, share real-time conditions, and track your skiing progress.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How Powder.ly Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Profile</h3>
+                    <p>Sign up and tell us about your skiing experience, preferences, and goals.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Connect with Skiers</h3>
+                    <p>Find and connect with like-minded skiers in your area or at your favorite resorts.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Share and Learn</h3>
+                    <p>Participate in forums, share tips, and learn from the community's collective knowledge.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Plan Your Adventures</h3>
+                    <p>Organize ski trips, find the best deals, and coordinate with your new ski buddies.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Track Your Progress</h3>
+                    <p>Log your ski days, track improvements, and set new personal challenges.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Stay Informed</h3>
+                    <p>Get real-time updates on snow conditions, weather, and resort information.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Powder.ly. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple animation for feature icons
+        const featureIcons = document.querySelectorAll('.feature-icon');
+        featureIcons.forEach(icon => {
+            icon.addEventListener('mouseover', () => {
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            icon.addEventListener('mouseout', () => {
+                icon.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>

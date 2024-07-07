@@ -1,0 +1,301 @@
+<html>
+
+<head>
+    <title>Extreme Skiers Collective - Powder Paradise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Amatic+SC:wght@700&display=swap');
+
+        :root {
+            --primary-color: #0e3b5e;
+            --secondary-color: #f0f8ff;
+            --accent-color: #ff6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--secondary-color);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(14, 59, 94, 0.8);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        nav {
+            text-align: right;
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url('https://extreme-skiers.com/images/powder-day.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(14, 59, 94, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            color: var(--secondary-color);
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-family: 'Amatic SC', cursive;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            background-color: #ff8787;
+        }
+
+        .powder-meter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .powder-indicator {
+            width: 20px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .powder-level {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            transition: height 0.5s ease-out;
+        }
+
+        .powder-label {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            background-color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section h2 {
+            font-family: 'Amatic SC', cursive;
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .powder-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .powder-particle {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Extreme Skiers Collective</h1>
+        <nav>
+            <a href="https://extreme-skiers.com/powder-forecast">Powder Forecast</a>
+            <a href="https://extreme-skiers.com/gear">Powder Gear</a>
+            <a href="https://extreme-skiers.com/techniques">Deep Snow Techniques</a>
+            <a href="https://extreme-skiers.com/safety">Backcountry Safety</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="hero-title">Powder Paradise</h2>
+                <p class="hero-subtitle">Immerse yourself in the ultimate powder skiing experience</p>
+                <button class="cta-button">Chase the Powder</button>
+                <div class="powder-meter">
+                    <div class="powder-indicator">
+                        <div class="powder-level" style="height: 80%;"></div>
+                    </div>
+                    <span class="powder-label">Powder Level: Epic</span>
+                </div>
+            </div>
+        </section>
+        <div class="powder-particles" id="powder-container"></div>
+        <section class="content-section">
+            <h2>Float Through Fluffy Dreams</h2>
+            <p>There's nothing quite like the rush of carving through pristine, knee-deep powder. At Extreme Skiers
+                Collective, we live for those perfect pow days when the world transforms into a playground of endless
+                white. Our expert guides know exactly where to find the deepest stashes and how to make the most of
+                every turn in these heavenly conditions.</p>
+        </section>
+        <section class="content-section">
+            <h2>Master the Art of Powder Skiing</h2>
+            <p>Skiing powder requires a unique set of skills. Learn how to lean back, keep your tips up, and flow with
+                the mountain. Our specialized powder clinics will teach you how to navigate through trees, float
+                effortlessly over pillows of snow, and maintain control in the deepest conditions. Whether you're a
+                powder novice or a seasoned pro, we'll help you take your skills to the next level.</p>
+        </section>
+        <section class="content-section">
+            <h2>Gear Up for the Deep Stuff</h2>
+            <p>The right equipment can make or break your powder day. Our experts will guide you through selecting the
+                perfect powder skis, bindings, and accessories to keep you floating on top of the freshies. From fat
+                skis to avalanche safety gear, we've got everything you need to make the most of those epic powder days.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        // Powder particle animation
+        function createPowderParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('powder-particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.3;
+            particle.style.width = particle.style.height = Math.random() * 7 + 3 + 'px';
+
+            document.getElementById('powder-container').appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        setInterval(createPowderParticle, 50);
+
+        // Powder level animation
+        const powderLevel = document.querySelector('.powder-level');
+        const powderLabel = document.querySelector('.powder-label');
+        let currentLevel = 80;
+
+        function updatePowderLevel() {
+            currentLevel = Math.max(10, Math.min(100, currentLevel + (Math.random() - 0.5) * 10));
+            powderLevel.style.height = currentLevel + '%';
+
+            let label = 'Low';
+            if (currentLevel > 30)
+                label = 'Moderate';
+            if (currentLevel > 60)
+                label = 'Excellent';
+            if (currentLevel > 80)
+                label = 'Epic';
+
+            powderLabel.textContent = `Powder Level: ${label}`;
+        }
+
+        setInterval(updatePowderLevel, 3000);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            document.querySelector('.hero-section').style.backgroundPositionY = scrollPosition * 0.7 + 'px';
+        });
+    </script>
+</body>
+
+</html>
