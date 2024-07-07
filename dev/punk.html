@@ -1,0 +1,420 @@
+<html>
+
+<head>
+    <title>PowderPunk: Rebel Alpine Revolution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #1e0f33;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff00ff;
+            --text-color: #333;
+            --neon-glow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(30, 15, 51, 0.9);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Audiowide', cursive;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            text-shadow: var(--neon-glow);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(30, 15, 51, 0.7), rgba(30, 15, 51, 0.7)), url('https://powderpunk.com/images/cyberpunk-ski.jpg') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            color: var(--secondary-color);
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-family: 'Audiowide', cursive;
+            margin-bottom: 1rem;
+            text-shadow: var(--neon-glow);
+            animation: glitch 5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff, 0.025em 0.05em 0 #fffc00;
+            }
+
+            14% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff, 0.025em 0.05em 0 #fffc00;
+            }
+
+            15% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff, -0.05em -0.05em 0 #fffc00;
+            }
+
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff, -0.05em -0.05em 0 #fffc00;
+            }
+
+            50% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff, 0 -0.05em 0 #fffc00;
+            }
+
+            99% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff, 0 -0.05em 0 #fffc00;
+            }
+
+            100% {
+                text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff, -0.025em -0.05em 0 #fffc00;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .snow-metrics {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .metric {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .metric:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            padding: 6rem 5%;
+            background-color: var(--secondary-color);
+            position: relative;
+            z-index: 2;
+            color: var(--text-color);
+        }
+
+        .content-section h2 {
+            font-family: 'Audiowide', cursive;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            flex-basis: calc(33% - 2rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+            border-radius: 20px;
+            box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 4rem 5%;
+            }
+
+            .feature {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glitch-overlay"></div>
+    <header>
+        <a href="https://extreme-skiers.com?fix=give it some creative personality#" class="logo">PowderPunk</a>
+        <nav>
+            <a href="https://extreme-skiers.com?fix=give it some creative personality#rebel">Rebel</a>
+            <a href="https://extreme-skiers.com?fix=give it some creative personality#tech">Tech</a>
+            <a href="https://extreme-skiers.com?fix=give it some creative personality#tribe">Tribe</a>
+            <a href="https://extreme-skiers.com?fix=give it some creative personality#manifest">Manifest</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Ride the Digital Avalanche</h1>
+                <p class="hero-subtitle">Where cyberpunk meets snowpunk in a neon-soaked alpine rebellion</p>
+                <button class="cta-button">Jack In</button>
+                <div class="snow-metrics">
+                    <div class="metric">
+                        <div class="metric-value">2077</div>
+                        <div class="metric-label">Year</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">∞</div>
+                        <div class="metric-label">Possibilities</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1</div>
+                        <div class="metric-label">You</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="rebel" class="content-section">
+            <h2>Rebel Against Gravity</h2>
+            <p>In a world where corporate conglomerates control the slopes, we are the underground resistance.
+                PowderPunk isn't just about skiing; it's about reclaiming the mountains from the silicon-slick elites
+                and their sanitized, AR-infested resorts.</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Neural Shred</h3>
+                    <p>Upload sick lines directly to your cerebral cortex. Feel the rush without the risk... or take
+                        both.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👁️</div>
+                    <h3>Retinal HUD</h3>
+                    <p>See the unseen. Track speed, g-force, and potential landing zones with our cutting-edge ocular
+                        implants.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🦿</div>
+                    <h3>Exo-Legs</h3>
+                    <p>Enhance your natural abilities with our state-of-the-art lower limb augmentations. Jump higher,
+                        land softer.</p>
+                </div>
+            </div>
+        </section>
+        <section id="tech" class="content-section">
+            <h2>Hack the Mountain</h2>
+            <p>Our gear isn't just equipment; it's an extension of your will. Quantum-entangled snowflakes that respond
+                to your thoughts, skis with edges sharper than a hacker's wit, and goggles that see through time itself.
+                This isn't just skiing; it's a revolution against reality itself.</p>
+        </section>
+        <section id="tribe" class="content-section">
+            <h2>Join the Neon Tribe</h2>
+            <p>We're not just skiers; we're cyber-shamans, techno-druids of the digital peaks. Our community thrives in
+                the shadowy servers of the deep web, sharing encrypted lines and forbidden techniques. Together, we'll
+                bring down the corporate ski complexes and free the mountains for all.</p>
+        </section>
+        <section id="manifest" class="content-section">
+            <h2>The PowderPunk Manifesto</h2>
+            <p>
+                1. The mountain is our motherboard, the snow our RAM.
+                <br />
+
+                2. Every run is a hack against the system of gravity.
+                <br />
+
+                3. Our tracks are our digital signatures, unique and indelible.
+                <br />
+
+                4. We ski not just through space, but through firewalls of reality.
+                <br />
+
+                5. In the face of digital domestication, we choose wild analog freedom.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        // Glitch effect for hero title
+        const glitchTitle = document.querySelector('.hero-title');
+        setInterval(() => {
+            glitchTitle.style.textShadow = `
+        ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px #ff00de,
+        ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px #00ffff
+      `;
+            setTimeout(() => {
+                glitchTitle.style.textShadow = 'var(--neon-glow)';
+            }, 50);
+        }, 3000);
+
+        // Dynamic snow metrics animation
+        function animateMetric(element, target, duration) {
+            let start = 0;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                if (elapsed > duration) {
+                    element.textContent = target;
+                    return;
+                }
+
+                const progress = elapsed / duration;
+                const current = Math.round(target * progress);
+                element.textContent = current + (element.dataset.suffix || '');
+                requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        }
+    </script>
+</body>
+
+</html>
