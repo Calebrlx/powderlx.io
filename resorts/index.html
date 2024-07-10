@@ -49,6 +49,8 @@
       try {
         const resp = await fetch('/data/ski_areas.json');
         console.log(resp.text)
+        console.log(resp.json)
+        console.log(resp.type)
 
         // const filteredResorts = data.features.filter(resort => {
         //   const country = resort.properties.country;
