@@ -47,21 +47,26 @@
 
     async function fetchResorts() {
       try {
-        const resp = await fetch('/data/ski_areas.json');
-        console.log(resp.text)
-        console.log(resp.json)
-        console.log(resp.type)
+        const response = await fetch('/data/ski_areas.json');
+        const data = await response.json();
 
-        // const filteredResorts = data.features.filter(resort => {
-        //   const country = resort.properties.country;
-        //   return ['USA', 'Canada', 'Argentina', 'Chile', 'Brazil', 'Colombia', 'Peru', 'Bolivia', 'Ecuador', 'Uruguay', 'Paraguay', 'Venezuela'].includes(country);
+        // const validCountries = ["United States", "Canada", "Argentina", "Chile", "Brazil", "Colombia", "Peru", "Bolivia", "Ecuador", "Uruguay", "Paraguay", "Venezuela"];
+        
+        // const filteredResorts = data.filter(resort => {
+        //   const country = resort.properties.location.localized.en.country;
+        //   return validCountries.includes(country);
         // });
 
         const resortList = data.map(resort => ({
           id: resort.properties.id,
           name: resort.properties.name,
-          website: resort.properties.website[0],
+          website: resort.properties.websites[0],
           status: resort.properties.status,
+          top: resort.properties.statistics?.maxElevation,
+          bottom: resort.properties.statistics?.minElevation,
+          vertical: resort.properties.statistics?.maxElevation && resort.properties.statistics?.minElevation
+            ? resort.properties.statistics.maxElevation - resort.properties.statistics.minElevation
+            : null
         }));
 
         displayResorts(resortList);
@@ -93,8 +98,12 @@
           website.style.pointerEvents = 'none';
         }
 
+        const vertical = document.createElement('div');
+        vertical.textContent = `Vertical: ${resort.vertical || 'N/A'} meters`;
+
         resortDiv.appendChild(name);
         resortDiv.appendChild(website);
+        resortDiv.appendChild(vertical);
 
         resortsContainer.appendChild(resortDiv);
       });
@@ -102,6 +111,5 @@
 
     fetchResorts();
   </script>
-  
 </body>
 </html>
