@@ -56,7 +56,7 @@
         //   return ['USA', 'Canada', 'Argentina', 'Chile', 'Brazil', 'Colombia', 'Peru', 'Bolivia', 'Ecuador', 'Uruguay', 'Paraguay', 'Venezuela'].includes(country);
         // });
 
-        const resortList = filteredResorts.map(resort => ({
+        const resortList = data.map(resort => ({
           id: resort.properties.id,
           name: resort.properties.name,
           website: resort.properties.website,
