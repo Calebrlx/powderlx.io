@@ -48,6 +48,7 @@
     async function fetchResorts() {
       try {
         const data = await fetch('/data/ski_areas.json');
+        console.log(data)
 
         // const filteredResorts = data.features.filter(resort => {
         //   const country = resort.properties.country;
@@ -57,7 +58,7 @@
         const resortList = data.map(resort => ({
           id: resort.properties.id,
           name: resort.properties.name,
-          website: resort.properties.website,
+          website: resort.properties.website[0],
           status: resort.properties.status,
         }));
 
@@ -90,12 +91,8 @@
           website.style.pointerEvents = 'none';
         }
 
-        const vertical = document.createElement('div');
-        vertical.textContent = `Vertical: ${resort.vertical} meters`;
-
         resortDiv.appendChild(name);
         resortDiv.appendChild(website);
-        resortDiv.appendChild(vertical);
 
         resortsContainer.appendChild(resortDiv);
       });
