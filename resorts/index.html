@@ -59,11 +59,6 @@
           name: resort.properties.name,
           website: resort.properties.website,
           status: resort.properties.status,
-          top: resort.properties.statistics.maxElevation,
-          bottom: resort.properties.statistics.minElevation,
-          vertical: resort.properties.statistics.maxElevation && resort.properties.statistics.minElevation
-            ? resort.properties.statistics.maxElevation - resort.properties.statistics.minElevation
-            : null
         }));
 
         displayResorts(resortList);
