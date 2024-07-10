@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ski Resort Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .resort {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .resort.inactive {
+      color: gray;
+    }
+    .resort.inactive a {
+      pointer-events: none;
+      text-decoration: none;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ski Resort Finder</h1>
+  <input type="text" id="search" placeholder="Search for resorts...">
+  <div id="resorts"></div>
+
+  <script>
+    document.getElementById('search').addEventListener('input', filterResorts);
+
+    function filterResorts() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const resorts = document.querySelectorAll('.resort');
+      resorts.forEach(resort => {
+        const name = resort.querySelector('.name').textContent.toLowerCase();
+        if (name.includes(query)) {
+          resort.style.display = 'block';
+        } else {
+          resort.style.display = 'none';
+        }
+      });
+    }
+
+    async function fetchResorts() {
+      try {
+        const response = await axios.get('/ski_areas.json');
+        const data = response.data;
+
+        // const filteredResorts = data.features.filter(resort => {
+        //   const country = resort.properties.country;
+        //   return ['USA', 'Canada', 'Argentina', 'Chile', 'Brazil', 'Colombia', 'Peru', 'Bolivia', 'Ecuador', 'Uruguay', 'Paraguay', 'Venezuela'].includes(country);
+        // });
+
+        const resortList = filteredResorts.map(resort => ({
+          id: resort.properties.id,
+          name: resort.properties.name,
+          website: resort.properties.website,
+          status: resort.properties.status,
+          top: resort.properties.statistics.maxElevation,
+          bottom: resort.properties.statistics.minElevation,
+          vertical: resort.properties.statistics.maxElevation && resort.properties.statistics.minElevation
+            ? resort.properties.statistics.maxElevation - resort.properties.statistics.minElevation
+            : null
+        }));
+
+        displayResorts(resortList);
+      } catch (error) {
+        console.error('Error fetching the resorts:', error);
+      }
+    }
+
+    function displayResorts(resorts) {
+      const resortsContainer = document.getElementById('resorts');
+      resortsContainer.innerHTML = '';
+
+      resorts.forEach(resort => {
+        const resortDiv = document.createElement('div');
+        resortDiv.className = 'resort';
+        if (resort.status !== 'operating') {
+          resortDiv.classList.add('inactive');
+        }
+
+        const name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = resort.name;
+
+        const website = document.createElement('a');
+        website.href = resort.website;
+        website.target = '_blank';
+        website.textContent = 'Visit Website';
+        if (resort.status !== 'operating') {
+          website.style.pointerEvents = 'none';
+        }
+
+        const vertical = document.createElement('div');
+        vertical.textContent = `Vertical: ${resort.vertical} meters`;
+
+        resortDiv.appendChild(name);
+        resortDiv.appendChild(website);
+        resortDiv.appendChild(vertical);
+
+        resortsContainer.appendChild(resortDiv);
+      });
+    }
+
+    fetchResorts();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
