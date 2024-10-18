@@ -1,588 +1,204 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Basic Metadata -->
-    <title>Powder.ly - Shred Local, Live Epic</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHDXJFC9FG"></script>
-
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-
-    <!-- Styleing -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder.ly - Empowering Independent Ski Instructors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto:wght@300;400;700&display=swap');
-
-        :root {
-            --primary-color: #1a2980;
-            --secondary-color: #26d0ce;
-            --accent-color: #ff4b1f;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
+            background-color: #f0f4f8;
+            color: #333;
+            font-size: 0.95rem;
+            text-align: center;
         }
-
         header {
-            background-color: transparent;
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        header.scrolled {
-            background-color: rgba(26, 41, 128, 0.9);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Amatic SC', cursive;
-            font-size: 2.5rem;
-            color: white;
-            text-decoration: none;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://powder.ly/images/sharp-peaks.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            color: white;
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Amatic SC', cursive;
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s both;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .search-container {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out 1s both;
-        }
-
-        .search-bar {
-            display: flex;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 0.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .search-bar input {
-            flex-grow: 1;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            border: none;
-            background: transparent;
-            color: white;
-            outline: none;
-        }
-
-        .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .search-bar button {
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .search-bar button:hover {
-            background-color: #ff6347;
-            transform: scale(1.05);
-        }
-
-        .snow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .features {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .features::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: white;
-            transform: skewY(-3deg);
-        }
-
-        .features h2 {
-            font-family: 'Amatic SC', cursive;
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .feature {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--accent-color);
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature h3 {
-            font-family: 'Amatic SC', cursive;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://powder.ly/images/powder-snow.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 6rem 5%;
-            position: relative;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--secondary-color);
-            transform: skewY(-3deg);
-        }
-
-        .cta-section h2 {
-            font-family: 'Amatic SC', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button.primary {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .cta-button.primary:hover {
-            background-color: #ff6347;
-            transform: scale(1.05);
-        }
-
-        .cta-button.secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-button.secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 4px;
-            transition: all 0.3s;
-        }
-
-        .menu-toggle.open span:nth-child(1) {
-            transform: rotate(45deg) translateY(7px);
-        }
-
-        .menu-toggle.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.open span:nth-child(3) {
-            transform: rotate(-45deg) translateY(-7px);
-        }
-
-        .nav-links.mobile {
-            display: none;
-            flex-direction: column;
-            gap: 1rem;
-            position: absolute;
-            top: 60px;
-            right: 5%;
-            background-color: rgba(26, 41, 128, 0.9);
+            background: #1f1f3f;
+            color: #fff;
             padding: 1rem;
-            border-radius: 10px;
+            text-align: center;
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.5rem;
         }
-
-        .nav-links.mobile a {
-            font-size: 1.2rem;
-            padding: 0.5rem 1rem;
+        .hero {
+            background: #1f1f3f;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            color: #fff;
         }
-
-        .nav-links.mobile.show {
-            display: flex;
+        .hero h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
-
-        @media (max-width: 768px) {
-            .nav-links.mobile a {
-                font-size: 1.2rem;
-                padding: 0.5rem 1rem;
+        /* .hero button {
+            background-color: #f0a202;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .hero button:hover {
+            background-color: #e18900;
+        } */
+        .section {
+            padding: 1.5rem 1rem;
+            max-width: 100%;
+            margin: auto;
+        }
+        .section h2 {
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.5rem;
+            color: #1f1f3f;
+            margin-bottom: 1rem;
+        }
+        .section-divider {
+            height: 2px;
+            background: #f0a202;
+            width: 60%;
+            margin: 1.5rem auto;
+        }
+        .roadmap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .roadmap-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding-top: 2rem;
+        }
+        .footer {
+            background: #1f1f3f;
+            color: #fff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .footer a {
+            color: #f0a202;
+            text-decoration: none;
+        }
+        @media (min-width: 600px) {
+            body {
+                font-size: 1rem;
             }
-
-            .nav-links.mobile.show {
-                display: flex;
+            .hero {
+                padding: 3.5rem 2rem;
             }
-
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links.mobile {
-                display: none;
-                flex-direction: column;
-                gap: 1rem;
-                position: absolute;
-                top: 60px;
-                right: 5%;
-                background-color: rgba(26, 41, 128, 0.9);
-                padding: 1rem;
-                border-radius: 10px;
-            }
-
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 2.3rem;
             }
-
-            .features-grid {
-                grid-template-columns: 1fr;
+            .section {
+                max-width: 600px;
             }
-
-            .cta-buttons {
-                flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .roadmap {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .section {
+                max-width: 700px;
+            }
+        }
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            .roadmap {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .section {
+                max-width: 900px;
             }
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">Powder.ly</a>
-            <div class="nav-links">
-                <a href="/features">The Goods</a>
-                <a href="/find-instructor">Find a Local</a>
-                <a href="/become-instructor">Join the Crew</a>
-                <a href="/login">My Stash</a>
-            </div>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links mobile" id="mobileNavLinks">
-                <a href="/features">The Goods</a>
-                <a href="/find-instructor">Find a Local</a>
-                <a href="/become-instructor">Join the Crew</a>
-                <a href="/login">My Stash</a>
-            </div>
-        </nav>
-    </header>
+    <div class="hero">
+        <h1>Welcome to Powder.ly!</h1>
+        <!-- <button>Join Our Community</button> -->
+    </div>
 
-    <main>
-        <section class="hero">
-            <!-- <div class="snow"></div> -->
-            <div class="hero-content">
-                <h1>Shred Local, Live Epic</h1>
-                <p>Score untouched lines with authentic mountain town legends. Fat pow days and YOLO sends await!</p>
-                <div class="search-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Where's your mountain?" />
-                        <button>Find Local Shredders</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="who" class="section">
+        <h2>Who Are We?</h2>
+        <p>Powder.ly is a platform connecting independent ski instructors with learners, offering a personalized and affordable alternative to resort-based lessons. We believe in creating opportunities for instructors to thrive and for learners to experience high-quality, tailored instruction.</p>
+    </section>
 
-        <section id="features" class="features">
-            <h2>Why Ride with Us?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">🏔️</div>
-                    <h3>Local Legends</h3>
-                    <p>Shred with true mountain town heroes who know every secret stash and hidden line.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎿</div>
-                    <h3>Custom Sends</h3>
-                    <p>From mellow groomers to gnarly chutes, we've got your perfect mountain adventure.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🍻</div>
-                    <h3>Apres Vibes</h3>
-                    <p>Score insider tips on the best local watering holes and grub spots.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🚡</div>
-                    <h3>Hidden Gems</h3>
-                    <p>Discover off-the-beaten-path resorts and backcountry paradises.</p>
-                </div>
-            </div>
-        </section>
+    <div class="section-divider"></div>
 
-        <section class="cta-section">
-            <h2>Ready to Send It?</h2>
-            <p>Whether you're chasing pow or looking to share your local knowledge, we've got your back.</p>
-            <div class="cta-buttons">
-                <a href="/find-instructor" class="cta-button primary">Find a Local Ripper</a>
-                <a href="/become-instructor" class="cta-button secondary">Join the Powder Posse</a>
-            </div>
-        </section>
-    </main>
+    <section id="mission" class="section">
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower independent ski instructors, providing them with tools for autonomy and success while offering learners accessible, high-quality instruction. We envision a community where ski education is democratized, making learning more affordable and rewarding for everyone.</p>
+    </section>
 
-    <footer>
-        <p>© 2024 Powder.ly. All rights reserved. See you in the white room!</p>
+    <div class="section-divider"></div>
+
+    <section id="story" class="section">
+        <h2>Our Story</h2>
+        <p>Born from a passion for skiing and recognizing the challenges independent instructors face, Powder.ly was created to help instructors thrive without the limitations of traditional resort employment. We want to support the ski community by bridging the gap between instructors and learners, making skiing accessible to all.</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="roadmap" class="section">
+        <h2>Roadmap</h2>
+        <div class="roadmap">
+            <!-- make a checklist for each phase  -->
+            <div class="roadmap-item">
+                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="25" fill="green"/>
+                </svg>                
+                <h3>Phase 1</h3>
+                <p>Building our instructor network by reaching out to passionate ski instructors and establishing a strong community base.</p>
+            </div>
+            <div class="roadmap-item">
+                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" fill="blue"/>
+                </svg>                
+                <h3>Phase 2</h3>
+                <p>Launching beta testing to refine the platform, gather user feedback, and enhance the user experience.</p>
+            </div>
+            <div class="roadmap-item">
+                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="25,0 50,25 25,50 0,25" fill="black"/>
+                </svg>
+                <h3>Phase 3</h3>
+                <p>Expanding community outreach, adding new features, and partnering with local ski resorts and businesses.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="join" class="section">
+        <h3>Instructors</h3>
+        <p>Join Powder.ly to gain visibility, financial independence, and be part of a supportive community. We provide the tools you need to manage your own schedule, connect with learners, and grow your business.</p>
+    
+        <h3>Students</h3>
+        <p>Looking for personalized ski instruction? Get in touch to learn more about our beta programs or stay updated on our official launch. Powder.ly connects you with experienced, independent ski instructors for a more tailored and affordable learning experience.</p>
+    
+        <h3>Join Us</h3>
+        <p>We’re building a team to transform ski instruction and we want you to be part of our journey. Email <a href="mailto:caleb@powder.ly">caleb[at]powder.ly</a> to inquire about opportunities to become a shareholder, board member, or to join our early-stage startup team as an engineer or team member.</p>
+        
+        <!-- <h3>Connect With Us</h3>
+        <p>Follow us on social media for updates and join our growing community of skiing enthusiasts!</p> -->
+    </section>
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Powder.ly | Designed to empower ski instructors and learners.</p>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Snow effect
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.style.left = Math.random() * window.innerWidth + 'px';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            snowflake.innerHTML = '❄';
-
-            document.querySelector('.snow').appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
-
-        setInterval(createSnowflake, 100);
-
-        // Search functionality (placeholder)
-        const searchButton = document.querySelector('.search-bar button');
-        searchButton.addEventListener('click', () => {
-            const searchInput = document.querySelector('.search-bar input');
-            alert(`Searching for local shredders near: ${searchInput.value}`);
-
-        });
-        // Here you would typically make an API call or redirect to a search results page
-
-        // Feature hover effect
-        const features = document.querySelectorAll('.feature');
-        features.forEach(feature => {
-            feature.addEventListener('mouseenter', () => {
-                feature.style.transform = 'translateY(-10px)';
-            });
-            feature.addEventListener('mouseleave', () => {
-                feature.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Parallax effect for CTA section
-        window.addEventListener('scroll', () => {
-            const cta = document.querySelector('.cta-section');
-            const scrollPosition = window.pageYOffset;
-            cta.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        });
-
-        // Google tag (gtag.js)
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-ZHDXJFC9FG');
-
-        // Menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNavLinks = document.getElementById('mobileNavLinks');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('open');
-            mobileNavLinks.classList.toggle('show');
-        });
-    </script>
 </body>
-
 </html>
